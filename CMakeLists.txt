@@ -14,7 +14,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 find_package(CURLP REQUIRED)
 
-
 add_executable(fetcher main.cpp)
 
 # Example using hardcoded value
@@ -29,3 +28,8 @@ add_executable(fetcher main.cpp)
 # Example using find_package ( variables )
 target_include_directories(fetcher PRIVATE ${CURLP_INCLUDE_DIRS})
 target_link_libraries(fetcher PRIVATE ${CURLP_LIBRARIES})
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/vendor/curl/bin/libcurl.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/vendor/curl/bin/libcrypto-1_1-x64.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/vendor/curl/bin/libssl-1_1-x64.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/vendor/cert/cacert.pem DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

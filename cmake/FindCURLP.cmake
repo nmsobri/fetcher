@@ -1,11 +1,11 @@
 set(
         PATHS
         /usr
-        /usr/local
         /opt
+        /usr/local
         /opt/local
-        C:/Users/slier/Desktop/Devs/curl
-        C:/Users/slier/Desktop/Devs/curlpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/vendor/curl
+        ${CMAKE_CURRENT_SOURCE_DIR}/vendor/curlpp
 )
 
 set(
@@ -42,7 +42,7 @@ include(FindPackageHandleStandardArgs)
 #Make sure all the variable is being set, otherwise error out using DEFAULT_MSG
 find_package_handle_standard_args(CURLP DEFAULT_MSG CURLP_INCLUDE_DIRS CURLP_LIBRARIES)
 
-message("########################")
+message("#################################")
 message(STATUS ${CURLP_INCLUDE_DIRS})
 message(STATUS ${CURLP_LIBRARIES})
-message("########################")
+message("#################################")
