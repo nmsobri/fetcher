@@ -1,0 +1,11 @@
+prefix=C:/Users/slier/Desktop/fmt-7.0.0/build/install
+exec_prefix=C:/Users/slier/Desktop/fmt-7.0.0/build/install
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: fmt
+Description: A modern formatting library
+Version: 7.0.0
+Libs: -L${libdir} -lfmt
+Cflags: -I${includedir}
+
